@@ -6,7 +6,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha tests/*-test.js --reporter spec"
+    "test": "mocha tests/*-test.js --reporter spec",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -40,9 +42,10 @@
   ],
   "dependencies": {
     "broccoli-jscs": "^1.2.2",
-    "ember-cli-babel": "^5.1.6",
+    "ember-cli-babel": "^6.0.0",
     "jscs-ember-deprecations": "0.0.27",
-    "temp": "0.8.3"
+    "temp": "0.8.3",
+    "snyk": "^1.42.6"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
@@ -52,5 +55,6 @@
   "bugs": {
     "url": "https://github.com/dockyard/ember-suave/issues"
   },
-  "homepage": "https://github.com/dockyard/ember-suave"
+  "homepage": "https://github.com/dockyard/ember-suave",
+  "snyk": true
 }
